@@ -3,7 +3,7 @@
 shopt -s extglob
 sed -i '/	refresh_config();/d' scripts/feeds
 [ ! -f feeds.conf ] && {
-sed -i '$a src-git custom https://github.com/kiddin9/openwrt-packages.git;master' feeds.conf.default
+sed -i '$a src-git custom https://github.com/QingMu01/openwrt-packages.git;master' feeds.conf.default
 }
 ./scripts/feeds update -a
 sudo rm -rf ./scripts/feeds/custom/mtk-eip93 
