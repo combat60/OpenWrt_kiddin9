@@ -5,8 +5,8 @@ sed -i '/	refresh_config();/d' scripts/feeds
 [ ! -f feeds.conf ] && {
 sed -i '$a src-git custom https://github.com/kiddin9/openwrt-packages.git;master' feeds.conf.default
 }
-sudo rm -rf ./scripts/feeds/custom/mtk-eip93 
 ./scripts/feeds update -a
+sudo rm -rf ./scripts/feeds/custom/mtk-eip93 
 ./scripts/feeds install -a -p custom
 ./scripts/feeds install -a
 cd feeds/custom; git pull; cd -
