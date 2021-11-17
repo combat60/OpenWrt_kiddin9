@@ -7,6 +7,7 @@ sed -i '$a src-git custom https://github.com/QingMu01/openwrt-packages.git;maste
 }
 ./scripts/feeds update -a
 ./scripts/feeds install -a -p custom
+./scripts/feeds install libpam
 ./scripts/feeds install -a
 cd feeds/custom; git pull; cd -
 (
