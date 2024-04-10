@@ -2,21 +2,21 @@
 +++ b/target/linux/meson/image/Makefile
 @@ -46,7 +46,8 @@ endef
  
- define Device/thunder-onecloud
-   DEVICE_DTS := meson8b-onecloud
--  DEVICE_TITLE := Thunder OneCloud
-+  DEVICE_TITLE := OneCloud 玩客云
+ define Device/thunder-ws1508
+   DEVICE_DTS := meson8b-ws1508
+-  DEVICE_TITLE := Thunder ws1508
++  DEVICE_TITLE := OneCloud ws1508
 +  DEVICE_PACKAGES += kmod-usb-net-rtl8152
    KERNEL_LOADADDR := 0x00208000
-   IMAGE/emmc.img := boot-script onecloud | emmc-common $$(DEVICE_NAME)
+   IMAGE/emmc.img := boot-script ws1508 | emmc-common $$(DEVICE_NAME)
  endef
 @@ -54,4 +55,10 @@ ifeq ($(SUBTARGET),meson8b)
-   TARGET_DEVICES += thunder-onecloud
+   TARGET_DEVICES += thunder-ws1508
  endif
  
 +define Image/Build
 +  export BIN_DIR=$(BIN_DIR); \
-+  cd /data/packit/openwrt-onecloud || true; \
++  cd /data/packit/openwrt-ws1508 || true; \
 +  . ~/packit/packit_onecloud1.sh || true;
 +endef
 +
